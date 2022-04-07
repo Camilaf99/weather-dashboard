@@ -3,6 +3,12 @@ h1 {
     font-size: 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: auto;
-    background-color: blueviolet;
+    background-color: rgb(114, 43, 180);
     padding: 20px;
+    color: whitesmoke;
+}
+
+.card-body {
+    padding: 25px;
+    margin: auto;
 }
