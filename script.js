@@ -104,7 +104,41 @@ function getWeather(cityName) {
     currentWeather(cityName);    
 }
 
+function readFromLocalStorage() {
+    var currentState = window.localStorage.getItem("cityHistory"); // { cities: ["", ""] }
+    if(!currentState) {
+        currentState = [];
+    } else {
+        currentState = JSON.parse(currentState).cities;
+    }
+    return currentState;
+}
+
+function addCityToLocalStorage(cityName) {
+    var currentState = readFromLocalStorage();
+    currentState.unshift(cityName);
+    window.localStorage.setItem("cityHistory", JSON.stringify({ cities: currentState }));
+}
+
+function refreshSearchHistory() {
+    let cityHistory = readFromLocalStorage();
+    $("#searchHistory")[0].innerHTML = "";
+    for(var i = 0; i < cityHistory.length; i++) {
+        let cityName = cityHistory[i];
+        $("#searchHistory")[0].innerHTML += "<div class=\"button\" onClick=\"getWeather('" + cityName + "');\">" + cityName + "</div>";
+    }
+}
+
 $("#executeSearch").click(function() {
     let cityName = $("#cityName")[0].value;
     getWeather(cityName);
+    addCityToLocalStorage(cityName);
+    refreshSearchHistory();
 });
+
+$("#clear-history-btn").click(function() {
+    window.localStorage.setItem("cityHistory", JSON.stringify({ cities: [] }));
+    refreshSearchHistory();
+});
+
+refreshSearchHistory();

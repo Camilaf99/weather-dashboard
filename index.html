@@ -17,14 +17,22 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-2">
-          <div id="search-feature">
-            <p>Search for a city</p>
-            <input id="cityName" type="text" name="city"></input>
-            <br/>
-            <button id="executeSearch">submit</button>
-            
+          <div class="row">
+            <div id="search-feature">
+              <p>Search for a city</p>
+              <input id="cityName" type="text" name="city"></input>
+              <br/>
+              <button class="btn btn-primary mb-3" type="button" id="executeSearch">submit</button>
             </div>
-        </div>
+          </div>
+          <div class="row">
+            <div id="searchHistory">
+            </div>
+          </div>
+          <div class="row">
+            <button class="btn btn-primary mb-3" type="button" id="clear-history-btn">Clear history</button>
+          </div>
+      </div>
         <div class="col-9">
           <div id="todays-weather" class="card-body">
             <h3 id="city-name" class="city-name align-middle"></h3>
@@ -34,29 +42,8 @@
             <p id="wind-speed"></p>
             <p id="UV-index"></p>
         </div>
-        </div>
-      </div>
-      <button class="btn btn-primary mb-3" type="button" id="clear-history-btn">Clear history</button>
-        <form id="history-btn"></form>
       </div>
     </div>
-
-    <div class="col-lg-10">
-      <! ---
-      <div class="row">
-          <div class="col-lg- card" id="todays-weather">
-              <div class="card-body">
-                  <h3 id="city-name" class="city-name align-middle"></h3>
-                  <img id="current-picture" alt="">
-                  <p id="temperature"></p>
-                  <p id="humidity"></p>
-                  <p id="wind-speed"></p>
-                  <p id="UV-index"></p>
-              </div>
-          </div>
-      </div>
-
-
       <div class="row-5day" id="day-head">
           <div class="col-10">
             <h3>5 Day forecast</h3>
@@ -71,7 +58,6 @@
         </div>
       </div>
     </div>
-
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
