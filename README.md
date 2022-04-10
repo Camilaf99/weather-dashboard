@@ -73,6 +73,6 @@ Satisfies all of the above acceptance criteria plus the following:
 ##How to Submit the Challenge
 You are required to submit BOTH of the following for review:
 
-1. The URL of the functional, deployed application.
+1. The URL of the functional, deployed application.  https://camilaf99.github.io/weather-dashboard/ 
 
-2. The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+2. The URL of the GitHub repository. Give the repository a unique name and include a README describing the project. https://github.com/Camilaf99/weather-dashboard 
